@@ -2,7 +2,7 @@
 
 made with Cypress.io
 
-##install node.js
+## install node.js
 https://nodejs.org/en/download/
 
 ## clone this repo to a local directory
@@ -14,5 +14,5 @@ cd automation-challenge
 ## install the node_modules
 npm install
 
-##run Cypress
+## run Cypress
 ./node_modules/.bin/cypress open
