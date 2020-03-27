@@ -2,19 +2,21 @@
 
 describe('Automation Challenge - Exercise 1', () => {
 
-    before(() => {
+    beforeEach(() => {
+        cy.visit('https://try.discourse.org')
+        cy.clearCookies()
+    })
+
+    it('should click the Menu and display Demo page', () => {
+
         cy.visit('https://www.discourse.org')
-          .get('#main > :nth-child(2) > :nth-child(4) > a')
+        .get('#main > :nth-child(2) > :nth-child(4) > a')
             .should('have.text', 'Demo')
             .should('have.attr', 'href').and('include', 'https://try.discourse.org')
             .then((href) => {
                 cy.visit(href)
                 .get('#site-text-logo').should('have.text', 'Demo') 
             })
-    })
-
-    beforeEach(() => {
-        cy.visit('https://try.discourse.org')
     })
 
     it('Should scroll to the end of the Page', () => {
@@ -81,5 +83,4 @@ describe('Automation Challenge - Exercise 1', () => {
                     cy.log('**Topic with more Views:** ', topic)
             })
     })
-    
 })
