@@ -7,8 +7,10 @@ describe('Automation Challenge - Exercise 1', () => {
         cy.clearCookies()
     })
 
-    it('should click the Menu and display Demo page', () => {
-
+    it('should access the Menu and display Demo page', () => {
+        //Demo page when clicked, redirect to a new tab window
+        //Cypress does not encourages that (https://docs.cypress.io/guides/references/trade-offs.html#Inside-the-browser)
+        //So, in that case, I got the href attribute and wrote a test using it, in the same browser
         cy.visit('https://www.discourse.org')
         .get('#main > :nth-child(2) > :nth-child(4) > a')
             .should('have.text', 'Demo')
@@ -19,13 +21,7 @@ describe('Automation Challenge - Exercise 1', () => {
             })
     })
 
-    it('Should scroll to the end of the Page', () => {
-
-        cy.scrollTo('bottom')
-            .get('.topic-list-bottom').should('contain', 'There are no more latest topics.')
-    })
-
-    it('should list all locked topics descriptions', () => {
+    it('should scroll to the end of the Page and list all locked topics descriptions', () => {
 
         cy.scrollTo('bottom')
             .get('.topic-list-bottom').should('contain', 'There are no more latest topics.')

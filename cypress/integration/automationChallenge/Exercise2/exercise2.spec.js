@@ -6,7 +6,7 @@ describe('Automation Challenge - Exercise 2', () => {
         cy.visit('https://www.trivago.com')        
     })
 
-    it('should print informations in Hotel List section', () => {
+    it('should print and check the informations in Hotel List section', () => {
     
         cy.get('#querytext')
             .type('Natal')
