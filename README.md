@@ -12,4 +12,4 @@ cd automation-challenge
 npm install
 
 ## run Cypress
-./node_modules/.bin/cypress open
+npm start
