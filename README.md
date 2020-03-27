@@ -5,9 +5,6 @@ made with Cypress.io
 ## install node.js
 https://nodejs.org/en/download/
 
-## clone this repo to a local directory
-git clone https://github.com/<your-username>/automation-challenge.git
-
 ## cd into the cloned repo
 cd automation-challenge
 
